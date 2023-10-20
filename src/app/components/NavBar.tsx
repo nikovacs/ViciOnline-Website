@@ -1,0 +1,47 @@
+"use client";
+
+import "./NavBar.css";
+import Link from "next/link";
+import { useState } from "react";
+
+export default function NavBar() {
+  let [navOpen, setNavOpen] = useState(false);
+  const handleNavToggle = () => {
+    setNavOpen(!navOpen);
+  };
+
+  return (
+    <nav className="nav">
+      <Link href="/" className="nav-logo">
+        Vici Online
+      </Link>
+      <a className="nav-toggle" onClick={handleNavToggle}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </a>
+      <ul className={`nav-links ${navOpen && "active"}`}>
+        <li>
+          <Link href="/download" className="nav-link">
+            Download
+          </Link>
+        </li>
+        <li>
+          <Link href="/forums" className="nav-link">
+            Forums
+          </Link>
+        </li>
+        <li>
+          <Link href="/help" className="nav-link">
+            Help
+          </Link>
+        </li>
+        <li>
+          <Link href="/docs" className="nav-link">
+            Documentation
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
