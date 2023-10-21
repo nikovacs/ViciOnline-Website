@@ -22,22 +22,22 @@ export default function NavBar() {
       </a>
       <ul className={`nav-links ${navOpen && "active"}`}>
         <li>
-          <Link href="/download" className="nav-link">
+          <Link href="/download" className="nav-link download">
             Download
           </Link>
         </li>
         <li>
-          <Link href="/forums" className="nav-link">
+          <Link href="/forums" className="nav-link forums">
             Forums
           </Link>
         </li>
         <li>
-          <Link href="/help" className="nav-link">
+          <Link href="/help" className="nav-link help">
             Help
           </Link>
         </li>
         <li>
-          <Link href="/docs" className="nav-link">
+          <Link href="/docs" className="nav-link docs">
             Documentation
           </Link>
         </li>

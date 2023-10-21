@@ -1,0 +1,15 @@
+.home-main {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .home-main {
+    flex-direction: column;
+  }
+
+  .home-main .primary,
+  .home-main .about {
+    width: 100%;
+  }
+}
