@@ -1,22 +1,28 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from "next";
+import { Handjet } from "next/font/google";
+import "./globals.css";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Handjet({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Vici Online',
-  description: '2D MMO RPGs for players by players',
-}
+  title: "Vici Online",
+  description: "2D MMO RPGs for players by players",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }

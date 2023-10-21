@@ -1,0 +1,19 @@
+.about {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    float: right;
+    padding: 2rem;
+    font-size: larger;
+}
+
+.about ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+

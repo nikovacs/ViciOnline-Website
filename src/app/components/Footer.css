@@ -1,0 +1,14 @@
+footer {
+    background-color: #f86624;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.copyright {
+    padding: .5rem;
+    text-align: center;
+}
