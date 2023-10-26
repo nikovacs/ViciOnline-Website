@@ -1,19 +1,24 @@
 .about {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100vh;
-    float: right;
-    padding: 2rem;
-    font-size: larger;
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  float: right;
+  padding: 10rem;
 }
 
 .about ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
+@media (max-width: 1400px) {
+  .about {
+    width: 100%;
+    padding: 2rem;
+  }
+}

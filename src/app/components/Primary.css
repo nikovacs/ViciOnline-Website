@@ -1,7 +1,8 @@
 .primary {
   color: white;
   width: 50%;
-  font-size: 4rem;
+  height: 100vh;
+  font-size: 7rem;
   text-align: center;
 }
 
@@ -19,18 +20,27 @@
   margin-top: 0;
 }
 
-.primary a {
-  width: 25vw;
-  text-decoration: none;
-  margin: 0 auto;
+.primary button {
   background-color: #f86624;
   color: white;
   border-radius: 5px;
   padding: 1rem;
   font-size: larger;
   cursor: pointer;
+  
 }
 
 .primary a:hover {
   background-color: #cc521e;
+}
+
+@media (max-width: 1400px) {
+  .primary {
+    font-size: 6rem;
+    width: 100%;
+  }
+
+  .primary button {
+    font-size: 3rem;
+  }
 }

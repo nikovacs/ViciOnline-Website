@@ -13,7 +13,7 @@ export default function Primary() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Join the Discord
+        <button>Join the Discord</button>
       </a>
     </div>
   );
