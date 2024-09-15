@@ -20,6 +20,9 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: 'Pixelify Sans',
+		allVariants: {
+			userSelect: 'none',
+		},
 	},
 });
 
