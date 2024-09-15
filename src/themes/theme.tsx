@@ -8,6 +8,18 @@ const theme = createTheme({
 		secondary: {
 			main: '#41AFEF',
 		},
+		background: {
+			default: '#1a293f',
+		},
+		success: {
+			main: '#DABFFF',
+		},
+		info: {
+			main: '#c179b9',
+		},
+	},
+	typography: {
+		fontFamily: 'Pixelify Sans',
 	},
 });
 
