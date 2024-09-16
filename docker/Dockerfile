@@ -7,7 +7,9 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install
 
-COPY . .
+# Copie o restante dos arquivos
+COPY public ./public
+COPY src ./src
 
 # Execute o build
 RUN yarn build
@@ -21,5 +23,6 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Copie o arquivo de configuração do Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Exponha a porta 80 para o tráfego HTTP
+# Exponha as portas 80 e 443
 EXPOSE 80
+EXPOSE 443
