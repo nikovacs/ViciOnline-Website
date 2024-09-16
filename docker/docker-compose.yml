@@ -1,15 +1,12 @@
 services:
-    app:
-        build:
-            context: .
-            dockerfile: docker/Dockerfile
+    web:
+        build: ./docker
+        volumes:
+            - ./docker/certbot/conf:/etc/letsencrypt
+            - ./docker/certbot/www:/var/www/certbot
         ports:
             - '80:80'
             - '443:443'
-        volumes:
-            - ./docker/nginx.conf:/etc/nginx/nginx.conf
-            - ./docker/certbot/conf:/etc/letsencrypt
-            - ./docker/certbot/www:/var/www/certbot
 
     certbot:
         image: certbot/certbot
@@ -17,10 +14,3 @@ services:
             - ./docker/certbot/conf:/etc/letsencrypt
             - ./docker/certbot/www:/var/www/certbot
         entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-
-    certbot-setup:
-        image: certbot/certbot
-        entrypoint: "/bin/sh -c 'certbot --nginx -d ruanfergui.com.br -d www.ruanfergui.com.br --non-interactive --agree-tos --email ruan_guimaraes2004@hotmail.com'"
-        volumes:
-            - ./docker/certbot/conf:/etc/letsencrypt
-            - ./docker/certbot/www:/var/www/certbot

@@ -1,18 +1,25 @@
-# Stage 1: Build the application
+# Etapa de construção
 FROM node:18 AS build
 
 WORKDIR /app
 
+# Copie os arquivos de projeto para o container
 COPY package.json yarn.lock ./
 RUN yarn install
 
 COPY . .
+
+# Execute o build
 RUN yarn build
 
-# Stage 2: Serve the application with Nginx
+# Etapa de produção
 FROM nginx:alpine
 
+# Copie o conteúdo da pasta /dist para o Nginx
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Ensure the correct path for nginx.conf
-COPY docker/nginx.conf /etc/nginx/nginx.conf
+# Copie o arquivo de configuração do Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Exponha a porta 80 para o tráfego HTTP
+EXPOSE 80
