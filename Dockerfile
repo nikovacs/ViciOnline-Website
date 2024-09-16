@@ -9,9 +9,7 @@ RUN yarn install
 
 # Copie o restante dos arquivos
 COPY ./src ./src
-COPY ./tsconfig.json ./
-COPY ./tsconfig.app.json ./
-COPY ./tsconfig.node.json ./
+COPY ./ ./
 
 # Execute o build
 RUN yarn build
