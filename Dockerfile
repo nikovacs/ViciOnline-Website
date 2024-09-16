@@ -8,7 +8,6 @@ COPY ./package.json ./yarn.lock ../
 RUN yarn install
 
 # Copie o restante dos arquivos
-COPY public ./public
 COPY src ./src
 
 # Execute o build
