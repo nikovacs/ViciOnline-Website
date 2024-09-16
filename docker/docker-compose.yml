@@ -1,9 +1,9 @@
 services:
     web:
-        build: ./docker
+        build: ./
         volumes:
-            - ./docker/certbot/conf:/etc/letsencrypt
-            - ./docker/certbot/www:/var/www/certbot
+            - ./certbot/conf:/etc/letsencrypt
+            - ./certbot/www:/var/www/certbot
         ports:
             - '80:80'
             - '443:443'
@@ -11,6 +11,6 @@ services:
     certbot:
         image: certbot/certbot
         volumes:
-            - ./docker/certbot/conf:/etc/letsencrypt
-            - ./docker/certbot/www:/var/www/certbot
+            - ./certbot/conf:/etc/letsencrypt
+            - ./certbot/www:/var/www/certbot
         entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
