@@ -8,10 +8,10 @@ COPY ./package.json ./yarn.lock ./
 RUN yarn install
 
 # Copie o restante dos arquivos
-COPY src ./src
-COPY tsconfig.json ./
-COPY tsconfig.app.json ./
-COPY tsconfig.node.json ./
+COPY ./src ./src
+COPY ./tsconfig.json ./
+COPY ./tsconfig.app.json ./
+COPY ./tsconfig.node.json ./
 
 # Execute o build
 RUN yarn build
