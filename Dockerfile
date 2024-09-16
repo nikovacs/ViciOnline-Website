@@ -4,12 +4,14 @@ FROM node:18 AS build
 WORKDIR /app
 
 # Copie os arquivos de projeto para o container
-COPY ./package.json ./yarn.lock ../
+COPY ./package.json ./yarn.lock ./
 RUN yarn install
 
 # Copie o restante dos arquivos
 COPY src ./src
 COPY tsconfig.json ./
+COPY tsconfig.app.json ./
+COPY tsconfig.node.json ./
 
 # Execute o build
 RUN yarn build
