@@ -3,17 +3,16 @@ import { MainStyles } from './styles';
 
 interface MainProps {
 	mt: number;
-	mb: number;
 }
 
-const Main: React.FC<MainProps> = ({ mt, mb }) => {
+const Main: React.FC<MainProps> = ({ mt }) => {
 	const styles = MainStyles();
 
 	return (
 		<Box
 			sx={{
 				marginTop: `${mt}px`,
-				height: `calc(100vh - ${mt + mb}px)`,
+				height: `calc(100vh - ${mt}px)`,
 				...styles.container,
 			}}
 		>

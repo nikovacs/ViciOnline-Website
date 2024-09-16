@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Navbar } from '../../components/Navbar';
 import { Footer } from '../../components/Footer';
 import Main from './components/main';
+import Info from './components/info';
 
 const Home: React.FC = () => {
 	const [navbarHeight, setNavbarHeight] = useState(0);
@@ -19,7 +20,8 @@ const Home: React.FC = () => {
 	return (
 		<Box>
 			<Navbar onHeightChange={handleNavbarHeightChange} />
-			<Main mt={navbarHeight} mb={footerHeight} />
+			<Main mt={navbarHeight} />
+			<Info mb={footerHeight} />
 			<Footer onHeightChange={handleFooterHeightChange} />
 		</Box>
 	);

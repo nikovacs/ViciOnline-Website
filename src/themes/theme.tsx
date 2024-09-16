@@ -17,6 +17,10 @@ const theme = createTheme({
 		info: {
 			main: '#c179b9',
 		},
+		text: {
+			primary: '#fff',
+			secondary: '#fff',
+		},
 	},
 	typography: {
 		fontFamily: 'Pixelify Sans',

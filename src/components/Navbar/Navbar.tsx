@@ -17,7 +17,6 @@ const Navbar: React.FC<NavbarProps> = ({ onHeightChange }) => {
 		const handleResize = () => {
 			if (navbarRef.current && onHeightChange) {
 				const height = navbarRef.current.offsetHeight;
-				console.log('Navbar height:', height); // Debugging
 				onHeightChange(height);
 			}
 		};
@@ -25,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ onHeightChange }) => {
 		const resizeObserver = new ResizeObserver(handleResize);
 		if (navbarRef.current) {
 			resizeObserver.observe(navbarRef.current);
-			handleResize(); // Initial height check
+			handleResize();
 		}
 
 		return () => {
@@ -62,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ onHeightChange }) => {
 			ref={navbarRef}
 			sx={{
 				...styles.container,
-				transition: `transform 0.3s ease-in-out`,
+				transition: `transform 0.5s ease-in-out`,
 				transform: visible ? 'translateY(0)' : 'translateY(-100%)',
 			}}
 		>
