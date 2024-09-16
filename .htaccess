@@ -1,0 +1,6 @@
+# Certifique-se de que o módulo de reescrita está ativado
+RewriteEngine On
+
+# Verifique se o protocolo é HTTP e redirecione para HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
